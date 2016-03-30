@@ -1,0 +1,19 @@
+<ion-modal-view class="modal" ng-controller="BetDetailCtrl">
+	<ion-header-bar class="bar bar-header" align-title="center" ng-class="{easy:bet.difficulty == 1, hard:bet.difficulty == 2, insane:bet.difficulty == 3}">
+		<button class="icon ion-close-round button-clear" ng-click="hideModal()"></button>
+    	<h1 class="title">Your Bet</h1>
+  	</ion-header-bar>
+  	<ion-content has-bouncing="false" class="center">
+	  	<div class="item item-text-wrap">
+		    {{bet.description}}
+	  	</div>
+  	</ion-content>
+  	<ion-footer-bar>
+		<div class="tabs tabs-icon-top" ng-click="completeBet()">
+	      <a class="tab-item">
+	        <i class="icon ion-beer"></i>
+	        Done!
+	      </a>
+	    </div>
+	</ion-footer-bar>
+</ion-modal-view>

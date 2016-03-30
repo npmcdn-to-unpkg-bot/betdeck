@@ -1,0 +1,143 @@
+/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'effra';
+  src: url("../fonts/effra-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'effra';
+  src: url("../fonts/effra-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+body {
+  font-family: 'effra';
+  cursor: url('//ionicframework.com/img/finger.png'), auto; }
+
+.tab-item, .title {
+  font-family: 'effra'; }
+
+.bar-header {
+  border-bottom-width: 0; }
+
+.header {
+  background-color: #3498db;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  color: white; }
+
+.scroll {
+  height: 100%; }
+
+.center {
+  margin: 0 auto;
+  text-align: center; }
+
+.item-content {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px; }
+
+.bar .title {
+  color: white;
+  font-size: 20px;
+  line-height: 46px; }
+
+.white {
+  color: white;
+  background: none repeat scroll 0 0 transparent;
+  border-color: transparent;
+  box-shadow: none; }
+
+.text-right {
+  text-align: right; }
+
+.input-label {
+  font-weight: normal; }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.row {
+  padding-left: 0;
+  padding-right: 0; }
+
+.modal.input {
+  background: white; }
+
+.modal.input textarea {
+  padding: 8px 10px;
+  text-align: left !important; }
+
+.pane, .view {
+  background: #eee; }
+
+.card {
+  border: 0;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 360px; }
+
+textarea {
+  width: 100%; }
+
+.gray-gradient {
+  background-color: #5e5e60;
+  background-image: -webkit-linear-gradient(#303031, #58585a 40%, #5e5e60);
+  background-image: linear-gradient(#303031, #58585a 40%, #5e5e60); }
+
+.grid {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%; }
+
+.masonry-brick {
+  display: none; }
+
+.masonry-brick.loaded {
+  display: block; }
+
+.button-clear.button-clear {
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  color: white; }
+
+.easy {
+  background-color: #33cd5f;
+  color: white !important; }
+
+.hard {
+  background-color: orange;
+  color: white !important; }
+
+.insane {
+  background-color: #ef473a;
+  color: white !important; }
+
+.button-bar {
+  padding: 0; }
+
+.button-bar > .button {
+  background: #FDFDFD;
+  font-size: 18px; }
+
+.button-bar > .button.selected {
+  border-bottom: 3px solid #2B96CF; }
+
+.button {
+  border-radius: 6px;
+  font-size: 22px; }
+
+.button, .tab-item {
+  border-style: none; }
+
+.no-background {
+  background: none; }
+
+.list:last-child.card {
+  margin-bottom: 6px; }

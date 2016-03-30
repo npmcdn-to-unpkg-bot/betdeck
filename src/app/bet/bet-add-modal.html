@@ -1,0 +1,17 @@
+<div class="modal" ng-controller="BetAddCtrl">
+  <ion-header-bar class="bar bar-header bar-calm" align-title="center">
+    <button class="button button-clear" ng-click="hideModal()">Cancel</button>
+    <h1 class="title">New Bet</h1>
+    <button class="button button-clear" ng-click="addBet()">Add</button>
+  </ion-header-bar>
+  <ion-content has-header="true" has-bouncing="false">
+    <div class="list">
+      <div class="item item-divider center">Description</div>
+      <textarea rows="14" ng-model="bet.description" class="padding" placeholder="Ex. Compliment a stranger"></textarea>
+      <div class="item item-divider center">Difficulty</div>
+      <ion-radio ng-model="bet.difficulty" ng-value="'1'">Easy</ion-radio>
+      <ion-radio ng-model="bet.difficulty" ng-value="'2'">Hard</ion-radio>
+      <ion-radio ng-model="bet.difficulty" ng-value="'3'">Insane</ion-radio>
+    </div>
+  </ion-content>
+</div>
