@@ -1,0 +1,28 @@
+box: wercker/nodejs
+build:
+  steps:
+    - npm-install
+    - npm-test
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: $SERVER_HOSTNAME
+    - add-ssh-key:
+        keyname: DOKKU
+    - script:
+        name: Initialize new repository
+        code: |
+          sudo rm -rf .git
+          git init
+          git config --global user.name "schmoofer"
+          git config --global user.email "euphonialabs@gmail.com"
+          git remote add dokku dokku@$SERVER_HOSTNAME:betdeck
+    - script:
+        name: Add everything to the repository
+        code: |
+          git add .
+          git commit -m "Result of deploy $WERCKER_GIT_COMMIT"
+    - script:
+        name: Push to dokku
+        code: |
+          git push dokku master -f
