@@ -2,15 +2,15 @@
 var express  = require('express');
 var ParseServer = require('parse-server').ParseServer;
 
-var app      = express(); 								// create our app w/ express
-var port  	 = process.env.PORT || 8100; 				// set the port
+var app      = express();                 // create our app w/ express
+var port     = process.env.PORT || 8100;        // set the port
 var morgan   = require('morgan');
 var bodyParser = require('body-parser');
 var path = require('path');
 
 var APP_FOLDER = "/www";
 
-var databaseUri = process.env.DATABASE_URI || process.env.MONGOLAB_URI;
+var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
 if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
@@ -18,10 +18,10 @@ if (!databaseUri) {
 
 var config = {
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
-  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
+  cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/parse/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
   masterKey: process.env.MASTER_KEY || '', //Add your master key here. Keep it secret!
-  serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse'
+  serverURL: process.env.SERVER_URL || 'http://localhost:8100/parse'
 }
 
 var api = new ParseServer(config);
@@ -46,13 +46,14 @@ app.get('/', function(req, res) {
   res.sendfile(path.resolve(__dirname + APP_FOLDER + '/index.html'));
 });
 
+
 app.get('/config.js',function(req,res){
-  	var setup = {
-  		appId: config.appId,
-  		masterKey: config.masterKey, //Add your master key here. Keep it secret!
-  		serverURL: config.serverURL,  // Don't forget to change to https if needed
-	};
-  	res.send("var CONFIG="+JSON.stringify(setup));
+    var setup = {
+      appId: config.appId,
+      masterKey: config.masterKey, //Add your master key here. Keep it secret!
+      serverURL: config.serverURL,  // Don't forget to change to https if needed
+   };
+    res.send("var CONFIG="+JSON.stringify(setup));
 });
 
 console.log("App listening on port " + port);
